@@ -42,10 +42,10 @@ find . \
     ! -path './systemd/system/getty@tty1.service.d' \
     ! -path './systemd/system/getty@tty1.service.d/*' \
     ! -path './systemd/system/multi-user.target.wants' \
-    ! -path './systemd/system/multi-user.target.wants/pacman-init.service' \
     ! -path './systemd/system/multi-user.target.wants/systemd-resolved.service' \
     ! -path './systemd/system/pacman-init.service' \
     -delete
+sed -i 's/^WantedBy=multi-user.target/WantedBy=default.target/' ./systemd/system/pacman-init.service
 popd > /dev/null
 
 mkdir -p build/airootfs/usr/local/bin
