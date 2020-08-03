@@ -54,7 +54,7 @@ mkdir -p build/airootfs/usr/local/share/{applications,locale}
 
 cp src/{*.py,*.glade,*.txt} build/airootfs/usr/local/lib/alinstaller
 cp misc/alinstaller build/airootfs/usr/local/bin/alinstaller
-cp misc/pacman-init.service build/airootfs/etc/systemd/system/pacman-init.service
+cp -R misc/systemd build/airootfs/etc
 cp -R misc/tmpfiles.d build/airootfs/etc/tmpfiles.d
 cp misc/*.desktop build/airootfs/usr/local/share/applications
 

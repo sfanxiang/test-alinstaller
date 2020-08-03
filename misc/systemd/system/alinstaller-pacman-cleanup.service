@@ -1,0 +1,11 @@
+# Derived from paccache.
+
+[Unit]
+Description=Remove unused cached package files
+After=sysinit.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/pacman -Sc --noconfirm
+Restart=on-failure
+RestartSec=43200s
