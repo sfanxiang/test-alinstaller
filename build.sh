@@ -84,5 +84,7 @@ for file in archlinux-*.iso; do
 	mv "$file" alinstaller.iso;
 done
 
+sha256sum -b alinstaller.iso | tee sha256sum.txt
+
 popd > /dev/null
 popd > /dev/null
