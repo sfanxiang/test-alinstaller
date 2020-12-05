@@ -74,6 +74,9 @@ cat misc/customize.sh >> build/airootfs/root/customize_airootfs.sh
 mkdir -p build/out
 rm -f build/work/build.make_*
 
+stat build/airootfs/usr/local/bin/*
+stat build/airootfs/usr/local/lib/alinstaller/*
+
 pushd build > /dev/null
 mkarchiso -v .
 
