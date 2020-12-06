@@ -75,6 +75,7 @@ mkdir -p build/out
 rm -f build/work/build.make_*
 
 pushd build > /dev/null
+cat `which mkarchiso`
 mkarchiso -v .
 
 pushd out > /dev/null
