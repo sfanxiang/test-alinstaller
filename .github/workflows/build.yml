@@ -42,6 +42,7 @@ jobs:
         docker exec -t build pacman -Su --noconfirm
         docker exec -t build pacman -S --needed --noconfirm base base-devel archiso gtk3 python-babel python-gobject python-psutil python-pylint python-pythondialog python-setuptools
         docker exec -t build sed -i "s/^airootfs_image_tool_options=('-comp' 'xz')$/airootfs_image_tool_options=('-comp' 'zstd')/" /bin/mkarchiso # Enhance compression
+        docker exec -t build bash -c 'cat `which mkarchiso`'
         docker exec -t build bash -c "cd /root/repo && ./check.sh && ./build.sh"
         cd build/out
         sudo mv alinstaller.iso ${{ steps.get_variables.outputs.output_file }}
